@@ -1,0 +1,7 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "fontiran.css";
+
+body {
+  font-family: IRANSans, var(--font-family-sans-serif);
+  text-align: start;
+}
