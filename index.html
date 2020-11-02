@@ -11,10 +11,50 @@
     <link href="./dist/css/index.css" rel="stylesheet" />
   </head>
   <body dir="rtl">
-    <p>First name: <input data-bind="value: firstName" /></p>
-    <p>Last name: <input data-bind="value: lastName" /></p>
-    <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+    <div class="login d-flex align-items-center justify-content-center">
+      <div
+        class="login_form shadow-lg d-flex align-items-stretch flex-column flex-md-row"
+      >
+        <form
+          class="col col-md-6 py-2 d-flex flex-column align-items-center justify-content-center"
+          data-bind="submit: submitForm"
+        >
+          <!-- ko if: step() === 0 -->
+          <label class="d-block w-100 mb-1 mt-3 px-2 small" for="name"
+            >نام</label
+          >
+          <input
+            class="form-control w-100"
+            data-bind="value: name"
+            id="name"
+            type="text"
+          />
+          <label class="d-block w-100 mb-1 mt-3 px-2 small" for="email"
+            >ایمیل</label
+          >
+          <input
+            class="form-control w-100"
+            data-bind="value: email"
+            id="email"
+            type="email"
+          />
+          <label class="d-block w-100 mb-1 mt-3 px-2 small" for="age">سن</label>
+          <input
+            class="form-control w-100"
+            data-bind="value: age"
+            id="age"
+            type="number"
+          />
+          <button class="btn btn-primary mt-3">مرحله بعد</button>
+          <!-- /ko -->
 
+          <!-- ko if: step() === 1 -->
+          <button class="btn btn-primary mt-3">ثبت نام</button>
+          <!-- /ko -->
+        </form>
+        <div class="bg col col-md-6 p-0"></div>
+      </div>
+    </div>
     <script src="./dist/js/index.min.js"></script>
   </body>
 </html>
