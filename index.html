@@ -19,7 +19,7 @@
           class="col col-md-6 py-2 d-flex flex-column align-items-center justify-content-center"
           data-bind="submit: submitForm"
         >
-          <!-- ko if: step() === 0 -->
+          <!-- ko if: step() === 1 -->
           <label class="d-block w-100 mb-1 mt-3 px-2 small" for="name"
             >نام</label
           >
@@ -48,7 +48,21 @@
           <button class="btn btn-primary mt-3">مرحله بعد</button>
           <!-- /ko -->
 
-          <!-- ko if: step() === 1 -->
+          <!-- ko if: step() === 2 -->
+          <span class="text-center mb-5"
+            >خوش آمدید، آیا مایل به دریافت خبرنامه هستید؟</span
+          >
+          <div class="form-group form-check">
+            <input
+              class="form-check-input"
+              data-bind="checked: subscribe"
+              id="subscribe"
+              type="checkbox"
+            />
+            <label class="form-check-label mr-4" for="subscribe"
+              >دریافت خبرنامه</label
+            >
+          </div>
           <button class="btn btn-primary mt-3">ثبت نام</button>
           <!-- /ko -->
         </form>
